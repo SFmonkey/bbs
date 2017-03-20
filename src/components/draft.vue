@@ -25,7 +25,7 @@
                   </div>
 
                   <div class="col-sm-9">
-                    <router-link :to="'/article/'+ plan.ID">{{ plan.TITLE }}</router-link>
+                    <router-link :to="'/draft/'+ plan.ID">{{ plan.TITLE }}</router-link>
                   </div>
 
                 </div>
@@ -68,7 +68,7 @@ export default {
 <style lang="css">
   .my-list-group{
     padding-left: 0;
-    margin-bottom: 10px;
+    margin-top: 10px;
   }
   .my-list-group-item{
     position: relative;

@@ -1,16 +1,20 @@
 import * as types from './mutation-types'
 
 export default {
-  [types.SAVE_PLAN] (state, plan, id) {
+  [types.SAVE_PLAN] (state, plan) {
     state.list.push(plan)
   },
 
-  [types.SAVE_REWARD] (state, plan, id) {
+  [types.SAVE_REWARD] (state, plan) {
     state.reward.push(plan)
   },
 
-  [types.SAVE_ACTIVITY] (state, plan, id) {
+  [types.SAVE_ACTIVITY] (state, plan) {
     state.activity.push(plan)
+  },
+
+  [types.SAVE_DRAFT] (state, plan) {
+    state.draft.push(plan)
   },
 
   [types.PULL_REWARD] (state, plan) {
@@ -56,5 +60,8 @@ export default {
 
   [types.CLEAR_USER] (state) {
     state.userstatus = false
+  },
+
+  [types.DELETE_DRAFT] (state) {
   }
 }

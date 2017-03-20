@@ -28,9 +28,19 @@ export default {
   saveActivity ({ commit }, plan) {
     Vue.http.post('http://localhost/creation.php', plan)
     .then(function (response) {
-      console.log(response.body.ID)
       Object.assign(plan, { ID: response.body.ID })
       commit(types.SAVE_ACTIVITY, plan)
+    })
+    .catch(function (response) {
+      alert('Error')
+    })
+  },
+  saveDraft ({ commit }, plan) {
+    Vue.http.post('http://localhost/proofing.php', plan)
+    .then(function (response) {
+      console.log(response.body.ID)
+      Object.assign(plan, { ID: response.body.ID })
+      commit(types.SAVE_DRAFT, plan)
     })
     .catch(function (response) {
       alert('Error')
@@ -89,6 +99,16 @@ export default {
       if (response.body === 'true') {
         commit(types.CLEAR_USER)
       }
+    })
+    .catch(function (response) {
+      alert('Error')
+    })
+  },
+  deleteDraft ({ commit }, id) {
+    console.log(id)
+    Vue.http.post('http://localhost/deleteDraft.php', id)
+    .then(function (response) {
+      commit(types.DELETE_DRAFT)
     })
     .catch(function (response) {
       alert('Error')

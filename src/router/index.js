@@ -13,6 +13,8 @@ import Activity from '@/components/activity'
 import Creation from '@/components/creation'
 import Explain from '@/components/explain'
 import Draft from '@/components/draft'
+import Proofing from '@/components/Proofing'
+import Edit from '@/components/edit'
 
 Vue.use(Router)
 
@@ -73,6 +75,14 @@ export default new Router({
       path: '/draft',
       name: 'draft',
       component: Draft
+    }, {
+      path: '/proofing',
+      name: 'proofing',
+      component: Proofing
+    }, {
+      path: '/draft/:id',
+      name: 'edit',
+      component: Edit
     }
   ]
 })

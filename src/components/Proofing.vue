@@ -66,7 +66,7 @@ export default {
         CONTENT: this.content,
         TIME: this.time
       }
-      this.$store.dispatch('saveReward', plan)
+      this.$store.dispatch('saveDraft', plan)
       this.$router.go(-1)
     }
   },
