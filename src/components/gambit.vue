@@ -35,12 +35,14 @@
         <v-aside></v-aside>
       </div>
     </div>
+    <v-hello></v-hello>
   </div>
 </template>
 
 <script>
 import Header from './header.vue'
 import Aside from './aside.vue'
+import Hello from './hello.vue'
 
 export default {
   name: 'gambit',
@@ -56,7 +58,8 @@ export default {
   },
   components: {
     'v-header': Header,
-    'v-aside': Aside
+    'v-aside': Aside,
+    'v-hello': Hello
   }
 }
 </script>
